@@ -13,7 +13,7 @@ export default function EventListing() {
   const appwriteConfig = new AppwriteConfig();
   const server = new ServerConfig();
 
-  const [events, setEvents] = useState<Models.Document[]>();
+  const [events, setEvents] = useState<Models.Document[]>([]);
   const [loader, setLoader] = useState(false);
 
   const router = useRouter();

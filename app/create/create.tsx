@@ -13,34 +13,34 @@ interface Sponsors {
 }
 
 const CreateEventPage = () => {
-  const [eventname, setEventName] = useState(" ");
-  const [description, setDescription] = useState(" ");
+  const [eventname, setEventName] = useState("TFC");
+  const [description, setDescription] = useState("The Frontend Club Meetup");
   const [banner, setBanner] = useState<File | null>(null);
-  const [hostname, setHostName] = useState(" ");
+  const [hostname, setHostName] = useState("Shivam Bhasin");
   const [eventdate, setEventDate] = useState(" ");
-  const [email, setEmail] = useState(" ");
-  const [country, setCountry] = useState(" ");
-  const [address, setAddress] = useState(" ");
-  const [city, setCity] = useState(" ");
-  const [state, setState] = useState("");
-  const [postal, setPostal] = useState(" ");
-  const [audience, setAudience] = useState(" ");
+  const [email, setEmail] = useState("bhasinshivam2002@gmail.com");
+  const [country, setCountry] = useState("India");
+  const [address, setAddress] = useState("A-12/A");
+  const [city, setCity] = useState("New Delhi");
+  const [state, setState] = useState("Delhi");
+  const [postal, setPostal] = useState("110016");
+  const [audience, setAudience] = useState("200");
   const [type, setType] = useState("In Person");
-  const [attendees, setAttendees] = useState(0);
+  const [attendees, setAttendees] = useState(40);
   const [price, setPrice] = useState(0);
   const [tech, setTech] = useState("Yes");
-  const [agenda, setAgenda] = useState(" ");
-  const [approval, setApproval] = useState(" ");
-  const [twitter, setTwitter] = useState(" ");
-  const [website, setWebsite] = useState(" ");
-  const [linkedin, setLinkedin] = useState(" ");
-  const [instagram, setInstagram] = useState(" ");
+  const [agenda, setAgenda] = useState("Frontend Tech Stack");
+  const [approval, setApproval] = useState("Yes");
+  const [twitter, setTwitter] = useState("https://www.x.com/_shivambhasin");
+  const [website, setWebsite] = useState("https://www.x.com/_shivambhasin");
+  const [linkedin, setLinkedin] = useState("https://www.x.com/_shivambhasin");
+  const [instagram, setInstagram] = useState("https://www.x.com/_shivambhasin");
 
   const router = useRouter();
   const appwriteConfig = new AppwriteConfig();
 
   const [sponsors, setSponsors] = useState<Sponsors[]>([
-    { id: 1, name: "", url: "" },
+    { id: 1, name: "Github education", url: "https://www.github.com" },
   ]);
 
   const handleSponsorChange = (
@@ -70,6 +70,10 @@ const CreateEventPage = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
+    // const locallyStoredEvents = JSON.parse(localStorage.getItem("events") ?? '[]');
+    // const newEventsList = JSON.stringify([...locallyStoredEvents, { eventname, description, banner: banner || new File([], ""), hostname, eventdate, email, country, address, city, state, postal, audience, type, attendees, price, tech, agenda, sponsors, approval, twitter, website, linkedin, instagram }]);
+    // localStorage.setItem("events", newEventsList);
 
     appwriteConfig
       .createEvent(

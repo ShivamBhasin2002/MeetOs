@@ -81,7 +81,7 @@ class AppwriteConfig {
   constructor() {
     this.client
       .setEndpoint(`${process.env.NEXT_PUBLIC_ENDPOINT}`)
-      .setProject(`${process.env.NEXT_PUBLIC_PROJECTID}`);
+      .setProject(`${process.env.NEXT_PUBLIC_PROJECTID}`)
   }
 
   googlelog(): void {
@@ -188,6 +188,7 @@ class AppwriteConfig {
       this.storage
         .createFile(this.bannerBucketId, ID.unique(), banner)
         .then((res) => {
+          console.log({res});
           this.databases
             .createDocument(this.databaseId, this.activeCollId, ID.unique(), {
               eventname: eventname,
@@ -215,10 +216,11 @@ class AppwriteConfig {
               instagram: instagram,
               registrations: [],
             })
-            .then((res) => {
+            .then((resCreateDoc) => {
+              console.log({resCreateDoc})
               const serverConfig = new ServerConfig();
-              serverConfig.createRegColl(res.$id, eventname);
-              serverConfig.createSponColl(res.$id, eventname, sponsor, JSON.parse(localStorage.getItem("userInfo") || "{}").$id);
+              serverConfig.createRegColl(resCreateDoc.$id, eventname);
+              serverConfig.createSponColl(resCreateDoc.$id, eventname, sponsor, JSON.parse(localStorage.getItem("userInfo") || "{}").$id);
               return Promise.resolve("sucess");
             });
         });

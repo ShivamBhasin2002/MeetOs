@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'EventAlly - Create Events',
+  title: 'MeetOs - Create Events',
   description: 'Event-Ally is a platform for event organizers to create and manage events.',
 }
 
