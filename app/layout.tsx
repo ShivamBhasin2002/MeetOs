@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'MeetOs - Create Events',
-  description: 'Event-Ally is a platform for event organizers to create and manage events.',
+  description: 'MeetOs is a platform for event organizers to create and manage events.',
 }
 
 export default function RootLayout({

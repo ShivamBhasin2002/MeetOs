@@ -82,7 +82,7 @@ export default function Home() {
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Events are a great way to connect with like-minded people. They
               also provide a great opportunity to learn and network with others
-              in your field. Get started with Event-Ally to host or join your
+              in your field. Get started with MeetOs to host or join your
               next event.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
